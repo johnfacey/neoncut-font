@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NeonCut Font Demo</title>
+
+  <style>
+    @font-face {
+      font-family: 'NeonCut';
+      src:
+        url('./neoncut.woff2') format('woff2'),
+        url('./neoncut.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #0b1020, #05070f);
+      color: #9ffcff;
+      font-family: 'NeonCut', system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .panel {
+      background: rgba(10, 20, 40, 0.6);
+      border: 1px solid rgba(140, 255, 255, 0.3);
+      box-shadow:
+        0 0 30px rgba(100, 255, 255, 0.15),
+        inset 0 0 20px rgba(100, 255, 255, 0.08);
+      padding: 40px 50px;
+      border-radius: 16px;
+      max-width: 800px;
+    }
+
+    h1 {
+      font-size: 56px;
+      letter-spacing: 0.08em;
+      margin: 0 0 20px;
+      color: #c7ffff;
+      text-shadow:
+        0 0 8px rgba(120, 255, 255, 0.6),
+        0 0 18px rgba(120, 255, 255, 0.3);
+    }
+
+    .subtitle {
+      font-size: 20px;
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .sample {
+      font-size: 22px;
+      line-height: 1.7;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(140, 255, 255, 0.2);
+    }
+
+    .label {
+      opacity: 0.6;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="panel">
+    <h1>NEONCUT</h1>
+    <div class="subtitle">Cyberpunk display font • Game UI ready</div>
+
+    <div class="sample">
+      <div class="label">ALPHABET</div>
+      ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+      abcdefghijklmnopqrstuvwxyz<br /><br />
+
+      <div class="label">NUMBERS</div>
+      0123456789<br /><br />
+
+      <div class="label">PUNCTUATION</div>
+      . , : ; ! ? - _ / ( ) [ ] { } &lt; &gt; + * = # @
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonCut - Cyberpunk Display Font</title>
+    <style>
+        @font-face {
+            font-family: 'NeonCut';
+            src: url('fonts/NeonCut.woff2') format('woff2'),
+                 url('fonts/NeonCut.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 100%);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'NeonCut', monospace;
+            font-size: clamp(3rem, 10vw, 8rem);
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s ease infinite;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5),
+                         0 0 60px rgba(255, 0, 255, 0.3);
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #00ffff;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            color: #0a0e27;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            margin: 0.5rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Showcase Section */
+        .showcase {
+            background: rgba(26, 26, 46, 0.6);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .showcase h2 {
+            font-family: 'NeonCut', monospace;
+            font-size: 2rem;
+            color: #00ffff;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .demo-text {
+            font-family: 'NeonCut', monospace;
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: #00ffff;
+            text-align: center;
+            margin: 2rem 0;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            line-height: 1.4;
+        }
+
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .char-box {
+            font-family: 'NeonCut', monospace;
+            font-size: 3rem;
+            color: #ff00ff;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 0, 255, 0.1);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .char-box:hover {
+            background: rgba(255, 0, 255, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+        }
+
+        /* Interactive Preview */
+        .interactive-preview {
+            margin: 3rem 0;
+        }
+
+        .preview-input {
+            font-family: 'NeonCut', monospace;
+            width: 100%;
+            font-size: 3rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            border-radius: 15px;
+            color: #00ffff;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .preview-input:focus {
+            border-color: #ff00ff;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            background: rgba(0, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 0, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            color: #00ffff;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255, 255, 255, 0.5);
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #00ffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff00ff;
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before,
+        .bg-animation::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+
+        .bg-animation::before {
+            background: #00ffff;
+            top: -200px;
+            left: -200px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-animation::after {
+            background: #ff00ff;
+            bottom: -200px;
+            right: -200px;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(100px, -100px); }
+            66% { transform: translate(-100px, 100px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header {
+                padding: 2rem 1rem;
+            }
+
+            .showcase {
+                padding: 2rem 1rem;
+            }
+
+            .alphabet-grid {
+                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            }
+
+            .char-box {
+                font-size: 2rem;
+            }
+
+            .preview-input {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <div class="container">
+        <header>
+            <h1>NeonCut</h1>
+            <p class="tagline">Cyberpunk Display Font • Game UI Ready</p>
+            <div>
+                <a href="fonts/NeonCut.woff2" download class="download-btn">Download WOFF2</a>
+                <a href="fonts/NeonCut.woff" download class="download-btn">Download WOFF</a>
+                <a href="https://github.com/johnfacey/neoncut-font" class="download-btn">View on GitHub</a>
+            </div>
+        </header>
+
+        <section class="showcase">
+            <h2>Preview</h2>
+            <div class="demo-text">
+                THE QUICK BROWN<br>
+                FOX JUMPS OVER<br>
+                THE LAZY DOG
+            </div>
+            <div class="demo-text" style="font-size: 2.5rem;">
+                the quick brown fox jumps<br>
+                over the lazy dog
+            </div>
+            <div class="demo-text" style="color: #ff00ff;">
+                0123456789
+            </div>
+        </section>
+
+        <section class="showcase">
+            <h2>Uppercase</h2>
+            <div class="alphabet-grid">
+                <div class="char-box">A</div>
+                <div class="char-box">B</div>
+                <div class="char-box">C</div>
+                <div class="char-box">D</div>
+                <div class="char-box">E</div>
+                <div class="char-box">F</div>
+                <div class="char-box">G</div>
+                <div class="char-box">H</div>
+                <div class="char-box">I</div>
+                <div class="char-box">J</div>
+                <div class="char-box">K</div>
+                <div class="char-box">L</div>
+                <div class="char-box">M</div>
+                <div class="char-box">N</div>
+                <div class="char-box">O</div>
+                <div class="char-box">P</div>
+                <div class="char-box">Q</div>
+                <div class="char-box">R</div>
+                <div class="char-box">S</div>
+                <div class="char-box">T</div>
+                <div class="char-box">U</div>
+                <div class="char-box">V</div>
+                <div class="char-box">W</div>
+                <div class="char-box">X</div>
+                <div class="char-box">Y</div>
+                <div class="char-box">Z</div>
+            </div>
+        </section>
+
+        <section class="showcase">
+            <h2>Lowercase</h2>
+            <div class="alphabet-grid">
+                <div class="char-box">a</div>
+                <div class="char-box">b</div>
+                <div class="char-box">c</div>
+                <div class="char-box">d</div>
+                <div class="char-box">e</div>
+                <div class="char-box">f</div>
+                <div class="char-box">g</div>
+                <div class="char-box">h</div>
+                <div class="char-box">i</div>
+                <div class="char-box">j</div>
+                <div class="char-box">k</div>
+                <div class="char-box">l</div>
+                <div class="char-box">m</div>
+                <div class="char-box">n</div>
+                <div class="char-box">o</div>
+                <div class="char-box">p</div>
+                <div class="char-box">q</div>
+                <div class="char-box">r</div>
+                <div class="char-box">s</div>
+                <div class="char-box">t</div>
+                <div class="char-box">u</div>
+                <div class="char-box">v</div>
+                <div class="char-box">w</div>
+                <div class="char-box">x</div>
+                <div class="char-box">y</div>
+                <div class="char-box">z</div>
+            </div>
+        </section>
+
+        <section class="showcase interactive-preview">
+            <h2>Try It Yourself</h2>
+            <input type="text" class="preview-input" placeholder="TYPE SOMETHING..." value="NeonCut">
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Electric Design</h3>
+                <p>Sharp, angular letterforms with a futuristic cyberpunk aesthetic</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎮</div>
+                <h3>Game Ready</h3>
+                <p>Perfect for UI, titles, and gaming interfaces</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+                <h3>Web Optimized</h3>
+                <p>WOFF2 and WOFF formats for fast loading</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Responsive</h3>
+                <p>Looks great on all screen sizes</p>
+            </div>
+        </section>
+
+        <section class="showcase">
+            <h2>How to Use</h2>
+            <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 10px; overflow-x: auto; color: #00ffff; font-size: 0.9rem;">
+@font-face {
+    font-family: 'NeonCut';
+    src: url('fonts/NeonCut.woff2') format('woff2'),
+         url('fonts/NeonCut.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'NeonCut', sans-serif;
+    color: #00ffff;
+}
+            </pre>
+        </section>
+
+        <footer>
+            <p>NeonCut Font © 2025 | <a href="https://github.com/johnfacey/neoncut-font">GitHub</a> | Free for personal and commercial use</p>
+        </footer>
+    </div>
+</body>
+</html>
