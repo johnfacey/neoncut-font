@@ -18,6 +18,7 @@ A bold cyberpunk display font with sharp angular letterforms. Perfect for gaming
 
 - [WOFF2 Format](fonts/neoncut.woff2) - Best for modern browsers
 - [WOFF Format](fonts/neoncut.woff) - Legacy browser support
+- [TTF Format](fonts/neoncut.ttf) - Original TrueType format
 - [SVG Source](fonts/neoncut.svg) - Original vector format
 
 ## 🚀 Quick Start
@@ -101,7 +102,7 @@ h1 {
 
 **Free for Personal and Commercial Use**
 
-You are free to use Voltage Font in any project, including:
+You are free to use NeonCut Font in any project, including:
 - ✅ Personal projects
 - ✅ Commercial projects
 - ✅ Client work
@@ -124,11 +125,11 @@ You are free to use Voltage Font in any project, including:
 Found a bug or have a suggestion? Feel free to:
 - [Open an issue](https://github.com/johnfacey/neoncut-font/issues)
 - Submit a pull request
-- Share your projects using Voltage!
+- Share your projects using NeonCut!
 
 ## 🎯 Inspiration
 
-Voltage was inspired by:
+NeonCut was inspired by:
 - Neon-lit cyberpunk cityscapes
 - Retro-futuristic arcade games
 - Digital interface design
@@ -136,7 +137,7 @@ Voltage was inspired by:
 
 ## 📸 Showcase
 
-Using Voltage in your project? We'd love to see it! Tag us or open an issue to be featured.
+Using NeonCut in your project? We'd love to see it! Tag us or open an issue to be featured.
 
 ## 📞 Contact
 
